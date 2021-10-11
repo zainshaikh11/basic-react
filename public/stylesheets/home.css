@@ -1,0 +1,12 @@
+.block__input {
+    animation: roll 0.5s linear infinite;
+}
+
+@keyframes roll {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
