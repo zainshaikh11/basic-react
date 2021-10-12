@@ -2,21 +2,7 @@ import React from 'react';
 import { Form, Formik, useField } from 'formik'
 import * as Yup from 'yup';
 
-const CustomUsernameInput = ({label, ...props}) => {
-    const [field, meta] = useField(props)
-
-    return (
-        <>
-            <label htmlFor={props.id || props.name}>{label}</label>
-            <input className="" {...field} {...props} />
-            {meta.touched && meta.error ? (
-                <div className="error">{meta.error}</div>
-            ) : null}
-        </>
-    )
-}
-
-const CustomPasswordInput = ({label, ...props}) => {
+const CustomInput = ({label, ...props}) => {
     const [field, meta] = useField(props)
 
     return (
@@ -58,8 +44,8 @@ export const FormikForm = () => {
                 {props => (
                     <Form>
                         <h1>Formik Login Form</h1>
-                        <CustomUsernameInput label="username" name="username" type="text" placeholder="username"/>
-                        <CustomPasswordInput label="password" name="password" type="password" placeholder="password"/>
+                        <CustomInput label="username" name="username" type="text" placeholder="username"/>
+                        <CustomInput label="password" name="password" type="password" placeholder="password"/>
                     </Form>
                 )}
             </Formik>
